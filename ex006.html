@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos DOM</title>
+    <style>
+        h1{
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            margin-top: 20px 20px 20px ;
+        }
+        input{
+            margin: 5px 5px 5px ;
+            
+
+        }
+        p#a{
+            text-align: center;
+        }
+        p#b{
+            text-align: center;
+        }
+        div#area{
+            margin-top: 100px;
+            background-color: hsl(161, 48%, 13%);
+            color: aliceblue;
+            width: 90px;
+            height: 90px;
+            line-height: 90px;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculadora Adição</h1>
+    <p id="a"><input type="number" name="txtn1" id="txtn1"> +
+    <input type="number" name="txtn2" id="txtn2">
+    <input type="button" value="Somar" onclick="somar()"></p>
+    <div id="res"><p id="b"> <strong>Resultado</strong> <p></p></div>
+    <script>
+        function somar() {
+            var tn1 = window.document.getElementById('txtn1')
+            var tn2 = window.document.querySelector('input#txtn2')
+            var res = window.document.getElementById('res')
+            var n1 = Number(tn1.value)
+            var n2 = Number(tn2.value)
+            var s = n1 + n2 
+            res.innerHTML = `<p id="b">A soma entra ${n1} e ${n2} é igual a <strong>${s}</strong></p>`  
+        }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="area" onclick="clicar()" onmouseenter="entrar()" onmouseout="sair()">
+        Interaja... 
+    </div>
+    <script>
+        var a = window.document.getElementById('area')
+        function clicar() {
+        a.innerText = 'Clicou...'
+        a.style.background = ''
+        }
+        function entrar(){
+            a.innerText = 'Entrou'
+            a.style.background = 'green'
+        }
+        function sair(){
+            a.innerText = 'Saiu '
+            a.style.background = '#7ce7c4'
+        }
+</script>
+    
+</body>
+</html>
